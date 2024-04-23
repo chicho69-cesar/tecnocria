@@ -1,13 +1,11 @@
 import { Router } from 'express'
+import { HealthRoutes } from '../modules/health'
 
 export class AppRouter {
   static get routes(): Router {
     const router = Router()
 
-    // TODO: Define the routes
-    router.use('/api', (req, res) => {
-      res.json({ message: 'Hello, world!!!' })
-    })
+    router.use('/api/health', HealthRoutes.routes)
 
     return router
   }
