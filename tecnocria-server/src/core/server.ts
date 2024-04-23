@@ -3,6 +3,7 @@ import express, { Express, Router } from 'express'
 import { Server as SocketServer } from 'socket.io'
 import cors from 'cors'
 import fileUpload from 'express-fileupload'
+import morgan from 'morgan'
 
 interface Options {
   port: number
@@ -35,6 +36,8 @@ export class Server {
     this.app.use(cors())
     // JSON parser
     this.app.use(express.json())
+    // Logger
+    this.app.use(morgan('tiny'))
     // Static folder
     this.app.use(express.static('public'))
     // URL parser
