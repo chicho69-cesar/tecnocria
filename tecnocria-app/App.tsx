@@ -1,20 +1,24 @@
+/* eslint-disable import/first */
+global.__reanimatedWorkletInit = () => {}
+
+import { colors } from '@/config'
+import { Router } from '@/routers'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style='auto' />
-    </View>
+    <>
+      <Router />
+
+      <StatusBar
+        style='light'
+        backgroundColor={colors.primary}
+        translucent={false}
+        animated
+        hidden={false}
+        hideTransitionAnimation='slide'
+        networkActivityIndicatorVisible
+      />
+    </>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
