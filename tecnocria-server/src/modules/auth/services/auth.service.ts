@@ -1,6 +1,6 @@
 import { Bcrypt, JWT } from '../../../config'
 import { CustomError } from '../../../core/errors'
-import { UserModel } from '../../../data/mongodb'
+import { TokenModel, UserModel } from '../../../data/mongodb'
 import { Auth } from '../models'
 
 export class AuthService {
@@ -28,6 +28,9 @@ export class AuthService {
       const token = await JWT.generateToken({ id: user.id })
       if (!token) throw CustomError.internalServer()
 
+      const tokenModel = new TokenModel({ token, user: user.id })
+      await tokenModel.save()
+
       return { user, token }
     } catch (error) {
       throw error
@@ -43,6 +46,10 @@ export class AuthService {
       if (!passwordMatch) throw CustomError.unauthorized('Invalid email or password')
 
       const token = await JWT.generateToken({ id: user.id })
+
+      await TokenModel.deleteMany({ user: user.id })
+      const tokenModel = new TokenModel({ token, user: user.id })
+      await tokenModel.save()
 
       return { user, token }
     } catch (error) {

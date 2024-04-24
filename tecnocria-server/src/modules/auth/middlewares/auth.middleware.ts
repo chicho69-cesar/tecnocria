@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express'
 import { JWT } from '../../../config'
-import { UserModel } from '../../../data/mongodb'
+import { TokenModel, UserModel } from '../../../data/mongodb'
 import { AuthValidator } from '../validators'
 
 export class AuthMiddleware {
@@ -54,12 +54,24 @@ export class AuthMiddleware {
     const id = await JWT.validateToken<{ id: string }>(bearerToken)
 
     if (!id) {
+      const tokenExists = await TokenModel.findOne({ token: bearerToken })
+      if (tokenExists) {
+        await TokenModel.deleteOne({ token: bearerToken })
+        return res.status(401).json({ error: 'Authentication expired' })
+      }
+
       return res.status(401).json({ error: 'Invalid Authorization' })
     }
 
     const user = await UserModel.findById(id)
 
     if (!user) {
+      return res.status(401).json({ error: 'Invalid Authorization' })
+    }
+
+    const tokenExists = await TokenModel.findOne({ token: bearerToken, user: id })
+
+    if (!tokenExists) {
       return res.status(401).json({ error: 'Invalid Authorization' })
     }
 
