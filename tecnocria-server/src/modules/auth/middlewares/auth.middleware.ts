@@ -51,10 +51,11 @@ export class AuthMiddleware {
       return res.status(401).json({ error: 'Invalid Authorization' })
     }
 
-    const id = await JWT.validateToken<{ id: string }>(bearerToken)
+    const validatedToken = await JWT.validateToken<{ id: string }>(bearerToken)
 
-    if (!id) {
+    if (!validatedToken) {
       const tokenExists = await TokenModel.findOne({ token: bearerToken })
+
       if (tokenExists) {
         await TokenModel.deleteOne({ token: bearerToken })
         return res.status(401).json({ error: 'Authentication expired' })
@@ -63,6 +64,7 @@ export class AuthMiddleware {
       return res.status(401).json({ error: 'Invalid Authorization' })
     }
 
+    const { id } = validatedToken
     const user = await UserModel.findById(id)
 
     if (!user) {
@@ -76,6 +78,7 @@ export class AuthMiddleware {
     }
 
     req.body.user = user
+    req.body.token = bearerToken
 
     next()
   }

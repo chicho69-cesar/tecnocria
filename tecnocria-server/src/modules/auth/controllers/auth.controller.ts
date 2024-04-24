@@ -32,4 +32,18 @@ export class AuthController {
       .then((data) => res.status(200).json(data))
       .catch((error) => this.handleError(error, res))
   }
+
+  signOut = (req: Request, res: Response) => {
+    const { token } = req.body as { token: string }
+
+    this.authService
+      .signOut(token)
+      .then(() => res.status(200).json({ message: 'User logged out' }))
+      .catch((error) => this.handleError(error, res))
+  }
+
+  auth = (req: Request, res: Response) => {
+    const { user } = req.body
+    res.status(200).json({ user })
+  }
 }

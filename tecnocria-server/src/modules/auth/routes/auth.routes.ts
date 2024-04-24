@@ -11,6 +11,8 @@ export class AuthRoutes {
 
     router.post('/sign-up', [AuthMiddleware.validateSignUpFields], controller.signUp)
     router.post('/sign-in', [AuthMiddleware.validateSignInFields], controller.signIn)
+    router.post('/sign-out', [AuthMiddleware.validateAuth], controller.signOut)
+    router.get('/', [AuthMiddleware.validateAuth], controller.auth)
 
     return router
   }

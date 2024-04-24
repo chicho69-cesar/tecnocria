@@ -56,4 +56,15 @@ export class AuthService {
       throw error
     }
   }
+
+  signOut = async (token: string) => {
+    try {
+      const tokenExists = await TokenModel.findOne({ token })
+      if (!tokenExists) throw CustomError.unauthorized('Authentication expired')
+
+      await TokenModel.deleteOne({ token })
+    } catch (error) {
+      throw error
+    }
+  }
 }
