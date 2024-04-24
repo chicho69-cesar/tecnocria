@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import mongoose, { Schema } from 'mongoose'
 
 const userSchema = new Schema({
@@ -33,5 +34,11 @@ const userSchema = new Schema({
     default: 'USER'
   }
 })
+
+userSchema.methods.toJSON = function () {
+  const { __v, password, _id, ...user } = this.toObject()
+  user.id = _id
+  return user
+}
 
 export const UserModel = mongoose.model('User', userSchema)
