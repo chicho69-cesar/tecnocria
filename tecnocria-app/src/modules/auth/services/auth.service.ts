@@ -1,18 +1,36 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 import { envs } from '@/config'
 import { Auth, CustomError, User } from '@/core'
 
-export async function signUp(user: User) {
+export async function signUp(
+  name: string,
+  lastName: string,
+  email: string,
+  password: string,
+  username: string,
+  role: string
+) {
   try {
-    const { data } = await axios.post<Auth>(
-      `${envs.SERVER_URL}/auth/sign-up`,
-      user
-    )
+    const { data } = await axios.post<Auth>(`${envs.SERVER_URL}/auth/sign-up`, {
+      name,
+      lastName,
+      email,
+      password,
+      username,
+      role
+    })
 
     return data
   } catch (error) {
     console.log(`Error en el servicio: ${error}`)
+
+    if (error instanceof AxiosError) {
+      const { response } = error
+      console.log(response!.data.error)
+      throw new CustomError(response!.status, response!.data.error)
+    }
+
     throw CustomError.internalServer('Internal Server Error')
   }
 }
@@ -27,6 +45,12 @@ export async function signIn(email: string, password: string) {
     return data
   } catch (error) {
     console.log(`Error en el servicio: ${error}`)
+
+    if (error instanceof AxiosError) {
+      const { response } = error
+      throw new CustomError(response!.status, response!.data.error)
+    }
+
     throw CustomError.internalServer('Internal Server Error')
   }
 }
@@ -49,8 +73,9 @@ export async function signOut(token: string) {
   } catch (error) {
     console.log(`Error en el servicio: ${error}`)
 
-    if (error instanceof CustomError && error.statusCode === 401) {
-      throw CustomError.unauthorized('Unauthorized')
+    if (error instanceof AxiosError) {
+      const { response } = error
+      throw new CustomError(response!.status, response!.data.error)
     }
 
     throw CustomError.internalServer('Internal Server Error')
@@ -77,8 +102,9 @@ export async function auth(token: string) {
   } catch (error) {
     console.log(`Error en el servicio: ${error}`)
 
-    if (error instanceof CustomError && error.statusCode === 401) {
-      throw CustomError.unauthorized('Unauthorized')
+    if (error instanceof AxiosError) {
+      const { response } = error
+      throw new CustomError(response!.status, response!.data.error)
     }
 
     throw CustomError.internalServer('Internal Server Error')
