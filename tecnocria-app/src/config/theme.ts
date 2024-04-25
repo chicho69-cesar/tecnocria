@@ -3,5 +3,7 @@ export const colors = {
   secondary: '#C56A2D',
   third: '#FFC8A4',
   active: '#25292E',
-  background: '#FFFBDA'
+  background: '#FFFBDA',
+  backgroundSecondary: '#FFF9E6',
+  red: '#F43F5E'
 }
