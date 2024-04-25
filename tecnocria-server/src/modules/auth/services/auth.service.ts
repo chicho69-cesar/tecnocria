@@ -8,7 +8,7 @@ export class AuthService {
 
   signUp = async (auth: Auth) => {
     try {
-      const userExists = await UserModel.findOne({ email: auth.email })
+      const userExists = await UserModel.findOne({ $or: [{ email: auth.email }, { username: auth.username }] })
       if (userExists) throw CustomError.badRequest('User already exists')
 
       const hashedPassword = Bcrypt.hash(auth.password)
