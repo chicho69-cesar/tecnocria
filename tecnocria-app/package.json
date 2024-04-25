@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.3",
     "@expo/vector-icons": "13.0.0",
     "@react-native-masked-view/masked-view": "0.3.0",
     "@react-navigation/bottom-tabs": "6.5.20",
@@ -24,8 +25,10 @@
     "expo-asset": "~9.0.2",
     "expo-constants": "~15.4.6",
     "expo-file-system": "~16.0.9",
+    "expo-font": "~11.10.3",
     "expo-image-picker": "~14.7.1",
     "expo-secure-store": "~12.8.1",
+    "expo-splash-screen": "~0.26.4",
     "expo-status-bar": "~1.11.1",
     "prettier": "3.2.5",
     "react": "18.2.0",
