@@ -1,1 +1,5 @@
-export { default as HomeStack } from './HomeStack'
+export { default as AdviceStack } from './AdviceStack'
+export { default as BinnacleStack } from './BinnacleStack'
+export { default as ChatStack } from './ChatStack'
+export { default as ConfigurationStack } from './ConfigurationStack'
+export { default as ToolsStack } from './ToolsStack'

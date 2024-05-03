@@ -1,1 +1,6 @@
+export { default as About } from './About'
+export { default as AdviceSection } from './AdviceSection'
+export { default as Advices } from './Advices'
+export { default as AskForAdvices } from './AskForAdvices'
 export { default as Home } from './Home'
+export { default as TermsAndConditions } from './TermsAndConditions'
