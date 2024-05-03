@@ -1,15 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { colors } from '@/config'
-import { Home } from '@/modules/advice'
+import { AddFamiliar, EditInfo, Tools } from '@/modules/configuration'
 import { OpenDrawer, ScreenHeader } from '../components'
 
 const Stack = createStackNavigator()
 
-export default function HomeStack() {
+export default function ConfigurationStack() {
   return (
     <Stack.Navigator
-      initialRouteName='Home'
+      initialRouteName='Tools'
       screenOptions={{
         headerStyle: {
           backgroundColor: colors.primary,
@@ -24,8 +24,26 @@ export default function HomeStack() {
         }
       }}>
       <Stack.Screen
-        name='Home'
-        component={Home}
+        name='Tools'
+        component={Tools}
+        options={{
+          headerTitle: () => <ScreenHeader title='Tecnocria' />,
+          headerLeft: () => <OpenDrawer />
+        }}
+      />
+
+      <Stack.Screen
+        name='EditInfo'
+        component={EditInfo}
+        options={{
+          headerTitle: () => <ScreenHeader title='Tecnocria' />,
+          headerLeft: () => <OpenDrawer />
+        }}
+      />
+
+      <Stack.Screen
+        name='AddFamiliar'
+        component={AddFamiliar}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
           headerLeft: () => <OpenDrawer />

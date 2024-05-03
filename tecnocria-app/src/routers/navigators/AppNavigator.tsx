@@ -1,8 +1,20 @@
-import { FontAwesome } from '@expo/vector-icons'
+import {
+  Entypo,
+  FontAwesome,
+  Fontisto,
+  Ionicons,
+  MaterialIcons
+} from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { colors } from '@/config'
-import { HomeStack } from '../stacks'
+import {
+  AdviceStack,
+  BinnacleStack,
+  ChatStack,
+  ConfigurationStack,
+  ToolsStack
+} from '../stacks'
 
 const Tab = createBottomTabNavigator()
 
@@ -22,14 +34,58 @@ export default function AppNavigator() {
         lazy: false,
         tabBarLabelStyle: { fontSize: 14, fontWeight: 'bold' }
       }}
-      initialRouteName='HomeStack'>
+      initialRouteName='AdviceStack'>
       <Tab.Screen
-        name='HomeStack'
-        component={HomeStack}
+        name='AdviceStack'
+        component={AdviceStack}
         options={{
           tabBarLabel: 'Inicio',
           tabBarIcon: ({ color }) => (
             <FontAwesome name='home' color={color} size={24} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name='BinnacleStack'
+        component={BinnacleStack}
+        options={{
+          tabBarLabel: 'Bitácora',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name='menu-book' color={color} size={24} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name='ChatStack'
+        component={ChatStack}
+        options={{
+          tabBarLabel: 'Chats',
+          tabBarIcon: ({ color }) => (
+            <Fontisto name='hipchat' color={color} size={24} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name='ToolsStack'
+        component={ToolsStack}
+        options={{
+          tabBarLabel: 'Herramientas',
+          tabBarIcon: ({ color }) => (
+            <Entypo name='tools' color={color} size={24} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name='ConfigurationStack'
+        component={ConfigurationStack}
+        options={{
+          tabBarLabel: 'Configuración',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name='settings-outline' color={color} size={24} />
           )
         }}
       />
