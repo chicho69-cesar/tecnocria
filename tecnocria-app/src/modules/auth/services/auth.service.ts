@@ -23,7 +23,7 @@ export async function signUp(
 
     return data
   } catch (error) {
-    console.log(`Error en el servicio: ${error}`)
+    console.log(`Error en el servicio sign-up: ${error}`)
 
     if (error instanceof AxiosError) {
       const { response } = error
@@ -44,7 +44,7 @@ export async function signIn(email: string, password: string) {
 
     return data
   } catch (error) {
-    console.log(`Error en el servicio: ${error}`)
+    console.log(`Error en el servicio sign-in: ${error}`)
 
     if (error instanceof AxiosError) {
       const { response } = error
@@ -71,7 +71,7 @@ export async function signOut(token: string) {
       throw CustomError.unauthorized('Unauthorized')
     }
   } catch (error) {
-    console.log(`Error en el servicio: ${error}`)
+    console.log(`Error en el servicio sign out: ${error}`)
 
     if (error instanceof AxiosError) {
       const { response } = error
@@ -84,9 +84,8 @@ export async function signOut(token: string) {
 
 export async function auth(token: string) {
   try {
-    const { data, status } = await axios.post<{ user: User }>(
+    const { data, status } = await axios.get<{ user: User }>(
       `${envs.SERVER_URL}/auth`,
-      {},
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -100,7 +99,7 @@ export async function auth(token: string) {
 
     return data
   } catch (error) {
-    console.log(`Error en el servicio: ${error}`)
+    console.log(`Error en el servicio auth: ${error}`)
 
     if (error instanceof AxiosError) {
       const { response } = error
