@@ -10,8 +10,8 @@ export default function ScreenHeader({ title }: Props) {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontFamily: 'Acme',
     color: '#fff'
   }
 })
