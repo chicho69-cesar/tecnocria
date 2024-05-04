@@ -1,9 +1,12 @@
-import { View, Text } from 'react-native'
+import { Container } from '@/core/ui'
+import { Text, View } from 'react-native'
 
 export default function AddBinnacle() {
   return (
-    <View>
-      <Text>AddBinnacle</Text>
-    </View>
+    <Container>
+      <View>
+        <Text>AddBinnacle</Text>
+      </View>
+    </Container>
   )
 }
