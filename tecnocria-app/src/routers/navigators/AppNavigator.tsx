@@ -32,7 +32,10 @@ export default function AppNavigator() {
         tabBarActiveTintColor: colors.active,
         tabBarInactiveTintColor: '#fff',
         lazy: false,
-        tabBarLabelStyle: { fontSize: 14, fontWeight: 'bold' }
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontFamily: 'Acme'
+        }
       }}
       initialRouteName='AdviceStack'>
       <Tab.Screen
@@ -41,7 +44,7 @@ export default function AppNavigator() {
         options={{
           tabBarLabel: 'Inicio',
           tabBarIcon: ({ color }) => (
-            <FontAwesome name='home' color={color} size={24} />
+            <FontAwesome name='home' color={color} size={20} />
           )
         }}
       />
@@ -52,7 +55,7 @@ export default function AppNavigator() {
         options={{
           tabBarLabel: 'Bitácora',
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name='menu-book' color={color} size={24} />
+            <MaterialIcons name='menu-book' color={color} size={20} />
           )
         }}
       />
@@ -63,7 +66,7 @@ export default function AppNavigator() {
         options={{
           tabBarLabel: 'Chats',
           tabBarIcon: ({ color }) => (
-            <Fontisto name='hipchat' color={color} size={24} />
+            <Fontisto name='hipchat' color={color} size={20} />
           )
         }}
       />
@@ -74,7 +77,7 @@ export default function AppNavigator() {
         options={{
           tabBarLabel: 'Herramientas',
           tabBarIcon: ({ color }) => (
-            <Entypo name='tools' color={color} size={24} />
+            <Entypo name='tools' color={color} size={20} />
           )
         }}
       />
@@ -85,7 +88,7 @@ export default function AppNavigator() {
         options={{
           tabBarLabel: 'Configuración',
           tabBarIcon: ({ color }) => (
-            <Ionicons name='settings-outline' color={color} size={24} />
+            <Ionicons name='settings-outline' color={color} size={20} />
           )
         }}
       />

@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { colors } from '@/config'
 import { Chat, Chats, GlobalChat } from '@/modules/chat'
-import { OpenDrawer, ScreenHeader } from '../components'
+import { OpenDrawer, ScreenHeader, UserLogged } from '../components'
 
 const Stack = createStackNavigator()
 
@@ -28,7 +28,8 @@ export default function ChatStack() {
         component={Chats}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -37,7 +38,8 @@ export default function ChatStack() {
         component={Chat}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -46,7 +48,8 @@ export default function ChatStack() {
         component={GlobalChat}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
     </Stack.Navigator>

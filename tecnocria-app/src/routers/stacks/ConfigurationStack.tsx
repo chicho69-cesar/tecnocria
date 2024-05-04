@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { colors } from '@/config'
 import { AddFamiliar, EditInfo, Tools } from '@/modules/configuration'
-import { OpenDrawer, ScreenHeader } from '../components'
+import { OpenDrawer, ScreenHeader, UserLogged } from '../components'
 
 const Stack = createStackNavigator()
 
@@ -28,7 +28,8 @@ export default function ConfigurationStack() {
         component={Tools}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -37,7 +38,8 @@ export default function ConfigurationStack() {
         component={EditInfo}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -46,7 +48,8 @@ export default function ConfigurationStack() {
         component={AddFamiliar}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
     </Stack.Navigator>

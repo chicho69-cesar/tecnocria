@@ -9,7 +9,7 @@ import {
   Home,
   TermsAndConditions
 } from '@/modules/advice'
-import { OpenDrawer, ScreenHeader } from '../components'
+import { OpenDrawer, ScreenHeader, UserLogged } from '../components'
 
 const Stack = createStackNavigator()
 
@@ -35,7 +35,8 @@ export default function AdviceStack() {
         component={Home}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -44,7 +45,8 @@ export default function AdviceStack() {
         component={AdviceSection}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -53,7 +55,8 @@ export default function AdviceStack() {
         component={Advices}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -62,7 +65,8 @@ export default function AdviceStack() {
         component={AskForAdvices}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -71,7 +75,8 @@ export default function AdviceStack() {
         component={About}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -80,7 +85,8 @@ export default function AdviceStack() {
         component={TermsAndConditions}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
     </Stack.Navigator>

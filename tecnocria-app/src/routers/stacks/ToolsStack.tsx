@@ -7,7 +7,7 @@ import {
   Professionals,
   SupportTools
 } from '@/modules/tools'
-import { OpenDrawer, ScreenHeader } from '../components'
+import { OpenDrawer, ScreenHeader, UserLogged } from '../components'
 
 const Stack = createStackNavigator()
 
@@ -33,7 +33,8 @@ export default function ToolsStack() {
         component={SupportTools}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -42,7 +43,8 @@ export default function ToolsStack() {
         component={Books}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -51,7 +53,8 @@ export default function ToolsStack() {
         component={Audiovisual}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
 
@@ -60,7 +63,8 @@ export default function ToolsStack() {
         component={Professionals}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />
+          headerLeft: () => <OpenDrawer />,
+          headerRight: () => <UserLogged />
         }}
       />
     </Stack.Navigator>
