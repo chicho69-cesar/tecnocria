@@ -1,5 +1,6 @@
 export { default as Button } from './Button'
 export { default as Container } from './Container'
+export { default as InfoCard } from './InfoCard'
 export { default as Input } from './Input'
 export { default as Logo } from './Logo'
 export { default as Spinner } from './Spinner'
