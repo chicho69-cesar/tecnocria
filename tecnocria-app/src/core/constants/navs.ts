@@ -24,7 +24,9 @@ export const BINNACLE_SCREENS = {
 export const CHAT_SCREENS = {
   CHATS: 'Chats',
   CHAT: 'Chat',
-  GLOBAL_CHAT: 'GlobalChat'
+  CREATE_CHAT: 'CreateChat',
+  GLOBAL_CHAT: 'GlobalChat',
+  HUG_BUDDY_CHAT: 'HugBuddyChat'
 }
 
 export const CONFIGURATION_SCREENS = {
