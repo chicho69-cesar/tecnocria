@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 import { colors } from '@/config'
 import { useNavigate } from '@/core'
@@ -23,6 +23,7 @@ export default function SignIn() {
   return (
     <AuthContainer>
       <Logo />
+      <View style={styles.separator} />
 
       <Title title='Iniciar sesión' />
 
@@ -75,5 +76,8 @@ const styles = StyleSheet.create({
   highlightedText: {
     color: colors.primary,
     fontFamily: 'Acme'
+  },
+  separator: {
+    marginTop: 40
   }
 })
