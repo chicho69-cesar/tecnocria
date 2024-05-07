@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from 'express'
 import { JWT } from '../../../config'
 import { TokenModel, UserModel } from '../../../data/mongodb'
 import { AuthValidator } from '../validators'
+import { getUserId } from '../../users'
 
 export class AuthMiddleware {
   static validateSignUpFields(req: Request, res: Response, next: NextFunction) {
@@ -77,8 +78,15 @@ export class AuthMiddleware {
       return res.status(401).json({ error: 'Invalid Authorization' })
     }
 
+    const userId = await getUserId(bearerToken)
+
+    if (!userId) {
+      return res.status(401).json({ error: 'Invalid Authorization' })
+    }
+
     req.body.user = user
     req.body.token = bearerToken
+    req.body.userId = userId
 
     next()
   }
