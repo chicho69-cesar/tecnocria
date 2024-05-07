@@ -1,17 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import mongoose, { Schema } from 'mongoose'
 
-const tokenSchema = new Schema({
-  token: {
-    type: String,
-    required: [true, 'Token is required']
+const tokenSchema = new Schema(
+  {
+    token: {
+      type: String,
+      required: [true, 'Token is required']
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'User is required']
+    }
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: [true, 'User is required']
+  {
+    toJSON: { virtuals: true },
+    timestamps: true,
+    toObject: { virtuals: true }
   }
-})
+)
 
 tokenSchema.methods.toJSON = function () {
   const { __v, _id, ...token } = this.toObject()
