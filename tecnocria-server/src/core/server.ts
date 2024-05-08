@@ -4,6 +4,7 @@ import { Server as SocketServer } from 'socket.io'
 import cors from 'cors'
 import fileUpload from 'express-fileupload'
 import morgan from 'morgan'
+import { SocketManager } from './sockets'
 
 interface Options {
   port: number
@@ -55,10 +56,8 @@ export class Server {
   }
 
   public configureSockets(): void {
-    this.io.on('connection', (socket) => {
-      // TODO: Use the socket controller
-      console.log('Socket connected', socket.id)
-    })
+    const socketManager = new SocketManager(this.io)
+    socketManager.socketEvents()
   }
 
   public async start(): Promise<void> {
