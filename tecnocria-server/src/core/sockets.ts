@@ -76,8 +76,6 @@ export class SocketManager {
             socket.emit('newHugBuddyMessage', newMessage)
             socket.emit('newHugBuddyMessage', newHugBuddyMessage)
 
-            //
-
             break
           }
 
