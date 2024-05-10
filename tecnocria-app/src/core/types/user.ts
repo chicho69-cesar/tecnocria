@@ -11,4 +11,6 @@ export interface User {
   email: string
   image?: string
   role: 'PROFESIONAL' | 'USER'
+  createdAt?: Date
+  updatedAt?: Date
 }
