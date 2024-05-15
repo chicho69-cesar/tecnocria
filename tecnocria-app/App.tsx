@@ -1,19 +1,24 @@
 /* eslint-disable import/first */
 global.__reanimatedWorkletInit = () => {}
 
-import { Roboto_400Regular } from '@expo-google-fonts/roboto'
+import {
+  Roboto_400Regular,
+  Roboto_400Regular_Italic
+} from '@expo-google-fonts/roboto'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 
 import { colors } from '@/config'
+import { SocketProvider } from '@/core'
 import { Router } from '@/routers'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
     Acme: require('./assets/fonts/Acme-Regular.ttf'),
-    Roboto: Roboto_400Regular
+    Roboto: Roboto_400Regular,
+    'Roboto-Italic': Roboto_400Regular_Italic
   })
 
   useEffect(() => {
@@ -33,7 +38,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <SocketProvider>
       <Router />
 
       <StatusBar
@@ -45,6 +50,6 @@ export default function App() {
         hideTransitionAnimation='slide'
         networkActivityIndicatorVisible
       />
-    </>
+    </SocketProvider>
   )
 }
