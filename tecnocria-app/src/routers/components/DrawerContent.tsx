@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/drawer'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-import { colors } from '@/config'
+import { colors, envs } from '@/config'
 import {
   ADVICE_SCREENS,
   CHAT_SCREENS,
@@ -41,7 +41,10 @@ export default function DrawerContent(props: DrawerContentComponentProps) {
 
       <View style={styles.container}>
         {user?.image ? (
-          <Image source={{ uri: user.image }} style={styles.image} />
+          <Image
+            source={{ uri: `${envs.SOCKET_URL}/${user.image}` }}
+            style={styles.image}
+          />
         ) : (
           <Image source={noImage} style={styles.image} />
         )}
@@ -134,7 +137,7 @@ export default function DrawerContent(props: DrawerContentComponentProps) {
         onPress={() => {
           navigateBetweenRoutes(
             STACKS.CONFIGURATION_STACK,
-            CONFIGURATION_SCREENS.TOOLS,
+            CONFIGURATION_SCREENS.SETTINGS,
             {}
           )
         }}
