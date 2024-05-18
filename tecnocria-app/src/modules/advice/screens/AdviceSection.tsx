@@ -1,7 +1,7 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 import { ADVICE_SCREENS, STACKS, useNavigate } from '@/core'
-import { Container, InfoCard, Title } from '@/core/ui'
+import { Button, Container, InfoCard, Title } from '@/core/ui'
 import { AdviceCategory } from '../components'
 
 const maternity = require('../../../../assets/categories/maternidad.png')
@@ -80,6 +80,17 @@ export default function AdviceSection() {
           onPress={() => handlePress('Desarrollo motriz y cognitivo')}
         />
       </View>
+
+      <Button
+        onPress={() => {
+          navigateBetweenRoutes(
+            STACKS.ADVICE_STACK,
+            ADVICE_SCREENS.ASK_FOR_ADVICES,
+            {}
+          )
+        }}>
+        <Text style={styles.buttonText}>Pide consejos personalizados</Text>
+      </Button>
     </Container>
   )
 }
@@ -89,5 +100,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between'
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Acme',
+    color: '#fff'
   }
 })
