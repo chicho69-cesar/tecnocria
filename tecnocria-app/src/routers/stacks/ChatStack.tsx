@@ -1,13 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { colors } from '@/config'
-import {
-  Chat,
-  Chats,
-  CreateChat,
-  GlobalChat,
-  HugBuddyChat
-} from '@/modules/chat'
+import { Chat, Chats, GlobalChat, HugBuddyChat } from '@/modules/chat'
 import { OpenDrawer, ScreenHeader, UserLogged } from '../components'
 
 const Stack = createStackNavigator()
@@ -42,16 +36,6 @@ export default function ChatStack() {
       <Stack.Screen
         name='Chat'
         component={Chat}
-        options={{
-          headerTitle: () => <ScreenHeader title='Tecnocria' />,
-          headerLeft: () => <OpenDrawer />,
-          headerRight: () => <UserLogged />
-        }}
-      />
-
-      <Stack.Screen
-        name='CreateChat'
-        component={CreateChat}
         options={{
           headerTitle: () => <ScreenHeader title='Tecnocria' />,
           headerLeft: () => <OpenDrawer />,
