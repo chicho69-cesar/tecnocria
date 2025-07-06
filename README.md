@@ -1,5 +1,9 @@
 # Tecnocria 💜
 
+<div style="width: 100%; display: flex; justify-content: center; margin-block: 1rem;">
+  <img src="./assets/favicon.png" width="100" height="100" />
+</div>
+
 **TECNOCRIA** es una aplicación móvil con inteligencia artificial diseñada para apoyar a los padres en la crianza de sus hijos en el estado de Aguascalientes. La aplicación, lanzada en 2024, ofrece recursos y herramientas personalizadas para facilitar la educación y el desarrollo de los niños.
 
 ## Descripción del Proyecto
