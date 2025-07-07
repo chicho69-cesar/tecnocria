@@ -1,4 +1,5 @@
-import { CustomError, Roles } from '@/core'
+import { CustomError } from '@/core/errors'
+import { Roles } from '@/core/types'
 import { useState } from 'react'
 import { setSession, signUp } from '../services'
 import { useAuth } from './use-auth'

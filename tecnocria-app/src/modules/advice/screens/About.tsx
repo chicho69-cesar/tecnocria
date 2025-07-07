@@ -1,4 +1,5 @@
-import { ADVICE_SCREENS, STACKS, useNavigate } from '@/core'
+import { ADVICE_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Button, Container, Logo } from '@/core/ui'
 import { StyleSheet, Text, View } from 'react-native'
 import Title from '../../../core/ui/Title'

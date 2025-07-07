@@ -2,7 +2,8 @@ import axios, { AxiosError } from 'axios'
 import * as FileSystem from 'expo-file-system'
 
 import { envs } from '@/config'
-import { CustomError, User } from '@/core'
+import { CustomError } from '@/core/errors'
+import { User } from '@/core/types'
 
 export async function patchUserInfo(
   name: string,

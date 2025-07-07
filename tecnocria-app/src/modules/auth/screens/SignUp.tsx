@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 import { colors } from '@/config'
-import { useNavigate } from '@/core'
+import { useNavigate } from '@/core/hooks'
 import { Button, Input, Logo, Spinner, Title } from '@/core/ui'
 import { AuthContainer, PasswordInput } from '../components'
 import { useSignUp } from '../hooks'

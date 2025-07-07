@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from 'react'
 
-import { CustomError } from '@/core'
+import { CustomError } from '@/core/errors'
 import { setSession, signIn } from '../services'
 import { useAuth } from './use-auth'
 

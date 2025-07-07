@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 
 import { envs } from '@/config'
-import { CustomError } from '@/core'
+import { CustomError } from '@/core/errors'
 
 export async function getBooksAI(token: string) {
   try {

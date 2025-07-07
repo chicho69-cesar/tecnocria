@@ -11,7 +11,7 @@ import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 
 import { colors } from '@/config'
-import { SocketProvider } from '@/core'
+import { SocketProvider } from '@/core/context/sockets.context'
 import { Router } from '@/routers'
 
 export default function App() {
@@ -44,7 +44,6 @@ export default function App() {
       <StatusBar
         style='light'
         backgroundColor={colors.primary}
-        translucent={false}
         animated
         hidden={false}
         hideTransitionAnimation='slide'

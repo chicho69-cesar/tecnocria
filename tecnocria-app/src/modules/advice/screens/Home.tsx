@@ -1,4 +1,5 @@
-import { ADVICE_SCREENS, STACKS, TOOLS_SCREENS, useNavigate } from '@/core'
+import { ADVICE_SCREENS, STACKS, TOOLS_SCREENS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Container, InfoCard, Logo, Title } from '@/core/ui'
 import { AdviceCard } from '../components'
 

@@ -1,4 +1,5 @@
-import { CHAT_SCREENS, STACKS, useNavigate } from '@/core'
+import { CHAT_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Container, InfoCard, Logo, Title } from '@/core/ui'
 import { ChatCard } from '../components'
 

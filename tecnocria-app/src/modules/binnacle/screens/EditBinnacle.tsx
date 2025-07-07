@@ -3,13 +3,9 @@ import { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import { colors, envs } from '@/config'
-import {
-  BINNACLE_SCREENS,
-  Binnacle,
-  STACKS,
-  useNavigate,
-  useParams
-} from '@/core'
+import { BINNACLE_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate, useParams } from '@/core/hooks'
+import { Binnacle } from '@/core/types'
 import { Button, Container, Input, Spinner, Title } from '@/core/ui'
 import { useParents } from '@/modules/configuration'
 import { ProgressBar } from '../components'

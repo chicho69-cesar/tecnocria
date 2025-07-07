@@ -1,5 +1,6 @@
 import { colors } from '@/config'
-import { ADVICE_SCREENS, STACKS, useNavigate, useParams } from '@/core'
+import { ADVICE_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate, useParams } from '@/core/hooks'
 import { Button, Container, InfoCard, Title } from '@/core/ui'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import { useAdvices } from '../hooks'

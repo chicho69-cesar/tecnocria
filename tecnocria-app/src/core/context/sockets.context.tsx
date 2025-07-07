@@ -1,8 +1,8 @@
-import { createContext, useEffect, useState } from 'react'
 import { envs } from '@/config'
 import { useAuth } from '@/modules/auth'
-import { useSocket } from '../hooks'
 import { useChats } from '@/modules/chat'
+import { createContext, useEffect, useState } from 'react'
+import { useSocket } from '../hooks'
 
 interface SocketContextProps {
   socket: any
@@ -17,7 +17,7 @@ interface SocketContextProps {
 export const SocketContext = createContext({} as SocketContextProps)
 
 interface SocketProviderProps {
-  children: React.ReactNode | React.ReactNode[] | JSX.Element | JSX.Element[]
+  children: React.ReactNode | React.ReactNode[]
 }
 
 export function SocketProvider({ children }: SocketProviderProps) {

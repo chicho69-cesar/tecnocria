@@ -1,4 +1,4 @@
-import { Parent } from '@/core'
+import { Parent } from '@/core/types'
 import { create } from 'zustand'
 
 interface ParentsStore {

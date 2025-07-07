@@ -1,7 +1,8 @@
 import axios, { AxiosError } from 'axios'
 
 import { envs } from '@/config'
-import { CustomError, GlobalMessage, HugBuddyMessage, Message } from '@/core'
+import { CustomError } from '@/core/errors'
+import { GlobalMessage, HugBuddyMessage, Message } from '@/core/types'
 
 export async function getMessages(category: string, token: string) {
   try {

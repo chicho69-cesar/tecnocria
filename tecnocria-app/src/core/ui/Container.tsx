@@ -2,7 +2,7 @@ import { colors } from '@/config'
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 
 interface Props {
-  children: React.ReactNode | React.ReactNode[] | JSX.Element | JSX.Element[]
+  children: React.ReactNode | React.ReactNode[] 
 }
 
 export default function Container({ children }: Props) {

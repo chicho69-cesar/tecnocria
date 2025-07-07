@@ -9,7 +9,7 @@ import {
 } from 'react-native-gifted-chat'
 
 import { colors, envs } from '@/config'
-import { useParams, useSocketManager } from '@/core'
+import { useParams, useSocketManager } from '@/core/hooks'
 import { Spinner } from '@/core/ui'
 import { useAuth } from '@/modules/auth'
 import { useMessages } from '../hooks'
@@ -99,7 +99,7 @@ export default function Chat() {
       }}
       user={{
         _id: 1,
-        avatar: `${envs.SOCKET_URL}/` + user?.image ?? blankImage
+        avatar: `${envs.SOCKET_URL}/` + user?.image || blankImage
       }}
       renderSend={props => (
         <Send

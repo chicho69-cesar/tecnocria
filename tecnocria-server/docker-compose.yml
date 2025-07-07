@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: mongo:5.0.0
@@ -10,3 +8,9 @@ services:
       - ./mongo:/data/db
     ports:
       - 27017:27017
+    networks:
+      - tecnocria_network
+
+networks:
+  tecnocria_network:
+    driver: bridge

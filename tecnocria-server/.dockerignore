@@ -8,3 +8,4 @@ docker-compose.stage.yml
 node_modules/
 
 dist
+mongo

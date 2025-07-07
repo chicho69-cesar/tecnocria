@@ -1,7 +1,8 @@
 import axios, { AxiosError } from 'axios'
 
 import { envs } from '@/config'
-import { Binnacle, CustomError } from '@/core'
+import { CustomError } from '@/core/errors'
+import { Binnacle } from '@/core/types'
 
 export async function getBinnacles(token: string) {
   try {

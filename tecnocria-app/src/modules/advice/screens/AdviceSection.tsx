@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 
-import { ADVICE_SCREENS, STACKS, useNavigate } from '@/core'
+import { ADVICE_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Button, Container, InfoCard, Title } from '@/core/ui'
 import { AdviceCategory } from '../components'
 

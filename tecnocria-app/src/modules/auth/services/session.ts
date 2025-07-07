@@ -1,5 +1,5 @@
 import { envs } from '@/config'
-import { Auth } from '@/core'
+import { Auth } from '@/core/types'
 import * as SecureStore from 'expo-secure-store'
 
 export async function getSession() {

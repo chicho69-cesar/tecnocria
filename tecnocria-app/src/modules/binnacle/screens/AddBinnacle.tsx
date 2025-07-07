@@ -1,5 +1,6 @@
 import { colors, envs } from '@/config'
-import { BINNACLE_SCREENS, STACKS, useNavigate } from '@/core'
+import { BINNACLE_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Button, Container, Input, Spinner, Title } from '@/core/ui'
 import { useParents } from '@/modules/configuration'
 import { Entypo } from '@expo/vector-icons'

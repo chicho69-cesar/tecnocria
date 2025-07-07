@@ -9,7 +9,8 @@ import {
 } from 'react-native'
 
 import { colors, envs } from '@/config'
-import { CONFIGURATION_SCREENS, STACKS, useNavigate } from '@/core'
+import { CONFIGURATION_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Button, Container, Logo, Title } from '@/core/ui'
 import { useAuth } from '@/modules/auth'
 import { useParents } from '../hooks'

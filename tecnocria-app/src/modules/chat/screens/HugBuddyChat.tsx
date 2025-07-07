@@ -9,7 +9,7 @@ import {
 } from 'react-native-gifted-chat'
 
 import { colors } from '@/config'
-import { useSocketManager } from '@/core'
+import { useSocketManager } from '@/core/hooks'
 import { Spinner } from '@/core/ui'
 import { useAuth } from '@/modules/auth'
 import { useHugBuddyMessages } from '../hooks'

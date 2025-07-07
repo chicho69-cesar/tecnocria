@@ -7,17 +7,17 @@ import {
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import { colors, envs } from '@/config'
+import { useNavigate } from '@/core/hooks'
+import { Roles } from '@/core/types'
+import { clearSession, signOut, useAuth } from '@/modules/auth'
+import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 import {
   ADVICE_SCREENS,
   CHAT_SCREENS,
-  Roles,
+  CONFIGURATION_SCREENS,
   STACKS,
-  TOOLS_SCREENS,
-  useNavigate
-} from '@/core'
-import { clearSession, signOut, useAuth } from '@/modules/auth'
-import { Ionicons, MaterialIcons } from '@expo/vector-icons'
-import { CONFIGURATION_SCREENS } from '../../core/constants/navs'
+  TOOLS_SCREENS
+} from '../../core/constants/navs'
 
 const noImage = require('../../../assets/img/no-image.jpg')
 

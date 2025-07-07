@@ -2,7 +2,7 @@ import { colors } from '@/config'
 import { KeyboardAvoidingView, ScrollView, StyleSheet } from 'react-native'
 
 interface Props {
-  children: React.ReactNode | React.ReactNode[] | JSX.Element | JSX.Element[]
+  children: React.ReactNode | React.ReactNode[] 
 }
 
 export default function AuthContainer({ children }: Props) {

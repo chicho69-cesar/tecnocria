@@ -2,7 +2,8 @@ import axios, { AxiosError } from 'axios'
 import * as FileSystem from 'expo-file-system'
 
 import { envs } from '@/config'
-import { CustomError, Parent } from '@/core'
+import { CustomError } from '@/core/errors'
+import { Parent } from '@/core/types'
 
 export async function getParents(token: string) {
   try {

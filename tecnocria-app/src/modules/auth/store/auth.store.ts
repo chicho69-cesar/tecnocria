@@ -1,4 +1,4 @@
-import { User } from '@/core'
+import { User } from '@/core/types'
 import { create } from 'zustand'
 
 interface AuthStore {

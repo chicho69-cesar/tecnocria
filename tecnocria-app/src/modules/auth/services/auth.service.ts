@@ -1,7 +1,8 @@
 import axios, { AxiosError } from 'axios'
 
 import { envs } from '@/config'
-import { Auth, CustomError, User } from '@/core'
+import { CustomError } from '@/core/errors'
+import { Auth, User } from '@/core/types'
 
 export async function signUp(
   name: string,

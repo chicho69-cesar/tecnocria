@@ -76,6 +76,20 @@ docker compose up -d
 npm run start
 ó
 yarn start
-ó
-expo start
+```
+
+**Compila la imagen de Docker:**
+
+```bash
+docker build -t tecnocria:1.0.0 .
+```
+
+**Ejecuta el contenedor de Docker:**
+
+```bash
+docker container run -dp 3000:3000 `
+> --name tecnocria `
+> --network tecnocria-server_tecnocria_network `
+> --env-file .env `
+> tecnocria:1.0.0
 ```

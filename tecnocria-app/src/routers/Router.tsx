@@ -23,6 +23,8 @@ export default function Router() {
         } finally {
           setIsLoading(false)
         }
+      } else {
+        setIsLoading(false)
       }
     }
 

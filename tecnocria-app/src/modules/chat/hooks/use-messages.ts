@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-import { CustomError, GlobalMessage, HugBuddyMessage, Message } from '@/core'
+import { CustomError } from '@/core/errors'
+import { GlobalMessage, HugBuddyMessage, Message } from '@/core/types'
 import { useAuth } from '@/modules/auth'
 import {
   getGlobalMessages,

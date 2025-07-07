@@ -1,5 +1,6 @@
 import { colors } from '@/config'
-import { STACKS, TOOLS_SCREENS, useNavigate } from '@/core'
+import { STACKS, TOOLS_SCREENS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Container, InfoCard, Logo } from '@/core/ui'
 import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native'
 

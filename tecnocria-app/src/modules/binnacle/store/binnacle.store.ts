@@ -1,4 +1,4 @@
-import { Binnacle } from '@/core'
+import { Binnacle } from '@/core/types'
 import { create } from 'zustand'
 
 interface BinnaclesStore {

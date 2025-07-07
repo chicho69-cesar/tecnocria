@@ -3,7 +3,8 @@ import * as ImagePicker from 'expo-image-picker'
 import { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-import { CONFIGURATION_SCREENS, STACKS, useNavigate } from '@/core'
+import { CONFIGURATION_SCREENS, STACKS } from '@/core/constants'
+import { useNavigate } from '@/core/hooks'
 import { Button, Container, Input, Title } from '@/core/ui'
 import { useParents } from '../hooks'
 

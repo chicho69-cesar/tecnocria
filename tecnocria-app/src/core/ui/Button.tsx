@@ -2,7 +2,7 @@ import { colors } from '@/config'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 
 interface Props {
-  children: React.ReactNode | React.ReactNode[] | JSX.Element | JSX.Element[]
+  children: React.ReactNode | React.ReactNode[] 
   onPress: () => void
   disabled?: boolean
 }
